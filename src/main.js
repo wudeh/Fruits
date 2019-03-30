@@ -2,6 +2,7 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
+import fastclick from "fastclick";
 import "@/assets/css/reset.css";
 
 import {
@@ -55,6 +56,9 @@ Vue.use(Button)
   .use(Icon);
 
 Vue.config.productionTip = false;
+
+// 解决移动端点击延迟 330ms 问题
+fastclick.attach(document.body);
 
 new Vue({
   router,
